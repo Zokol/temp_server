@@ -36,5 +36,5 @@ INSTALLATION:
 	- "15 12  1 * *" = every first day of the month, at 12:15
 	- "15 12  * * 0" = every sunday at 12:15
 	- "15 12  * */2 *" = every other month, each day at 12:15
-* 4. That's it, you can run the runme.sh to check that everything works and the graphs are updated.
+* 4. That's it, you can run the runme.sh to check that everything works and that the graphs are updated.
 * 5. When everything works, you can flush the old databases with sampledata. Just remove the existing rrd-files and run create_db.sh and create_alarm_db.sh.
