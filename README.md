@@ -26,7 +26,7 @@ The UI is based on PHP-site, that displays RRDTOOL's graphs and reads current st
 INSTALLATION:
 1. Install and configure the http-server and other depencies listed above.
 2. Copy the code by git clone or downloading it as zip-file to your http-server docroot.
-2. Append the following line to the end of /etc/crontab: */5 *   * * *   root    cd /var/www/temp_server; ./runme.sh
+3. Append the following line to the end of /etc/crontab: */5 *   * * *   root    cd /var/www/temp_server; ./runme.sh
 	- Change the "var/www/temp_server" to the path of where the temp_server-code resides.
 	- You can adjust the sample frequency by changing the "*/5 *  * * *"-setting. This current setting means that measurements are taken every five minutes. Below are some examples of how the cron timing works.
 	- "*/10 *" = every 10 minutes
