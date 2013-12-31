@@ -24,9 +24,9 @@ This code works on any platform with http-server, Perl, PHP5 and RRDTools. I use
 The UI is based on PHP-site, that displays RRDTOOL's graphs and reads current state of alarm-input from alarm_state.log that is updated by check_alarm.py. This Python-script has to be run by root, as it needs access to host memory registers.
 
 INSTALLATION:
-1. Install and configure the http-server and other depencies listed above.
-2. Copy the code by git clone or downloading it as zip-file to your http-server docroot.
-2. Append the following line to the end of /etc/crontab: */5 *   * * *   root    cd /var/www/temp_server; ./runme.sh
+* 1. Install and configure the http-server and other depencies listed above.
+* 2. Copy the code by git clone or downloading it as zip-file to your http-server docroot.
+* 3. Append the following line to the end of /etc/crontab: */5 *   * * *   root    cd /var/www/temp_server; ./runme.sh
 	- Change the "var/www/temp_server" to the path of where the temp_server-code resides.
 	- You can adjust the sample frequency by changing the "*/5 *  * * *"-setting. This current setting means that measurements are taken every five minutes. Below are some examples of how the cron timing works.
 	- "*/10 *" = every 10 minutes
@@ -36,4 +36,5 @@ INSTALLATION:
 	- "15 12  1 * *" = every first day of the month, at 12:15
 	- "15 12  * * 0" = every sunday at 12:15
 	- "15 12  * */2 *" = every other month, each day at 12:15
-
+* 4. That's it, you can run the runme.sh to check that everything works and that the graphs are updated.
+* 5. When everything works, you can replace the sample databases. Just remove the existing rrd-files and run create_db.sh and create_alarm_db.sh
