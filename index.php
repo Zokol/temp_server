@@ -1,13 +1,13 @@
 <? 
 	$lastmod = date("F d, Y g:i A", filemtime("temp_daily.png")); 
-	$last_measures = file_get_contents('/tmp/last_temp.log');
+	$last_measures = file_get_contents('./last_temp.log');
 	$temp_start_index = strpos($last_measures, "Inside");
 	$temp_div_index = strpos($last_measures, "Outside");
 	$last_time = substr($last_measures, 0, $temp_start_index);
 	$last_inside_temp = substr($last_measures, $temp_start_index, $temp_div_index - $temp_start_index);
 	$last_outside_temp = substr($last_measures, $temp_div_index);
 	
-	$alarm_raw = file_get_contents('/tmp/alarm_state.log');
+	$alarm_raw = file_get_contents('./alarm_state.log');
 ?>
 
 

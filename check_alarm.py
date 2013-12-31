@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 
-f = open("/tmp/alarm_state.log", 'w')
+f = open("alarm_state.log", 'w')
 
 GPIO.setup(17, GPIO.IN)
 alarm = GPIO.input(17)

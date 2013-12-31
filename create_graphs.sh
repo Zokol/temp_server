@@ -1,5 +1,5 @@
 #!/bin/bash
-DIR="/home/pi/Programming/Temp"
+DIR="."
  
 #set to C if using Celsius
 TEMP_SCALE="C"
@@ -8,6 +8,8 @@ TEMP_SCALE="C"
 INTEMP_COLOR="#550000"
 OUTTEMP_COLOR="#0000FF"
 ALARM_COLOR="#FF0000"
+
+date
  
 #hourly
 rrdtool graph $DIR/temp_hourly.png \

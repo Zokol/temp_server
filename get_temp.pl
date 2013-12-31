@@ -1,7 +1,8 @@
 #!/usr/bin/perl
 use LWP::UserAgent;
  
-my $dir = '/home/pi/Programming/Temp';
+#my $dir = '/home/pi/Programming/Temp';
+my $dir = '.';
 my $metar_url = 'http://weather.noaa.gov/pub/data/observations/metar/stations/EFTU.TXT';
 my $is_celsius = 1; #set to 1 if using Celsius
  
@@ -40,7 +41,7 @@ while ($output !~ /YES/g && $attempts < 5)
         {
                 $output =~ /t=(\d+)/i;
                 $temp = ($is_celsius) ? ($1 / 1000) : ($1 / 1000) * 9/5 + 32;
-                $rrd = `/usr/bin/rrdtool update $dir/hometemp.rrd N:$temp:$outtemp`;
+                $rrd = `rrdtool update $dir/hometemp.rrd N:$temp:$outtemp`;
         }
  
         $attempts++;
